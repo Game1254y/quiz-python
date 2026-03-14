@@ -1,18 +1,21 @@
-import random #embaralha pergunta
-import time #tempo para resposta
-from datetime import datetime #colocar data que nosso projeto foi feito
+import random 
+import time 
+from datetime import datetime 
 
 print("Bem-vindo ao Quiz Sobre Python!")
 input("Pressione Enter para começar...")
+print()
+print("Digite apenas a letra da resposta (A, B, C ou D).")
+print()
 
 perguntas = [
 [
-"Qual função mostra algo na tela em Python?", #pergunta
+"Qual função mostra algo na tela em Python?", 
 "A) input",
 "B) print",
 "C) if",
 "D) for",
-"B" #Resposta correta
+"B" 
 ],
 
 [
@@ -21,7 +24,7 @@ perguntas = [
 "B) input",
 "C) random",
 "D) time",
-"B" #Resposta correta
+"B" 
 ],
 
 [
@@ -30,7 +33,7 @@ perguntas = [
 "B) for",
 "C) print",
 "D) import",
-"A" #Resposta correta
+"A" 
 ],
 
 [
@@ -39,7 +42,7 @@ perguntas = [
 "B) else",
 "C) for",
 "D) input",
-"C" #Resposta correta
+"C" 
 ],
 
 [
@@ -48,60 +51,82 @@ perguntas = [
 "B) random",
 "C) datetime",
 "D) math",
-"B" #Resposta correta
+"B" 
 ],
 
 [
-"PERGUNTA?",
-"A) ",
-"B) ",
-"C) ",
-"D) ",
-"" #Resposta correta
+"Qual símbolo usamos para fazer um comentário em Python?",
+"A) //",
+"B) #",
+"C) -",
+"D) **",
+"B" 
 ],
 
 [
-"PERGUNTA?",
-"A) ",
-"B) ",
-"C) ",
-"D) ",
-"" #Resposta correta
+"Qual palavra usamos para criar uma função em Python?",
+"A) function",
+"B) create",
+"C) def",
+"D) func",
+"C" 
 ],
 
 [
-"PERGUNTA?",
-"A) ",
-"B) ",
-"C) ",
-"D) ",
-"" #Resposta correta
+"Qual tipo de dado representa números inteiros em Python?",
+"A) string",
+"B) float",
+"C) int",
+"D) bool",
+"C" 
 ],
 
 [
-"PERGUNTA?",
-"A) ",
-"B) ",
-"C) ",
-"D) ",
-"" #Resposta correta
+"Qual valor representa verdadeiro em Python?",
+"A) true",
+"B) yes",
+"C) 1",
+"D) True",
+"D" 
 ],
 
 [
-"PERGUNTA?",
-"A) ",
-"B) ",
-"C) ",
-"D) ",
-"" #Resposta correta
+"Qual estrutura usamos para repetir enquanto uma condição for verdadeira?",
+"A) while",
+"B) repeat",
+"C) for",
+"D) loop",
+"A" 
 ],
 ]
 
-random.shuffle(perguntas) #embaralha as perguntas
+random.shuffle(perguntas) 
+placar = 0
+tentativas = 0
 
 for pergunta in perguntas:
-    for linha in pergunta[:5]: # mostra só pergunta e alternativas
+    for linha in pergunta[:5]: 
         print(linha)
 
-    resposta = input("Resposta: ").upper() #Recebe a resposta
     print()
+
+    resposta = input("Resposta: ").upper()  
+    tentativas += 1
+
+    print()
+
+    if resposta == pergunta[5]:
+        print("Acertou!")
+        placar += 1
+    else:
+        print("Errou! A resposta correta é:", pergunta[5]) 
+    print()
+    print("Próxima pergunta...")
+    time.sleep(2)
+
+    
+print("Quiz finalizado!") 
+print("Você acertou", placar, "de", tentativas, "perguntas.")
+
+data = datetime.now()
+print("Data do quiz:", data.strftime("13/03/2026"))
