@@ -129,4 +129,4 @@ print("Quiz finalizado!")
 print("Você acertou", placar, "de", tentativas, "perguntas.")
 
 data = datetime.now()
-print("Data do quiz:", data.strftime("13/03/2026"))
+print("Data do quiz:", data.strftime("%d/%m/%Y %H:%M"))
