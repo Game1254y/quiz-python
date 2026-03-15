@@ -104,7 +104,7 @@ random.shuffle(perguntas)
 placar = 0
 tentativas = 0
 
-for pergunta in perguntas:
+for i, pergunta in enumerate(perguntas):
     for linha in pergunta[:5]: 
         print(linha)
 
@@ -121,8 +121,11 @@ for pergunta in perguntas:
     else:
         print("Errou! A resposta correta é:", pergunta[5]) 
     print()
-    print("Próxima pergunta...")
-    time.sleep(2)
+    if i < len(perguntas) - 1:
+        print("Próxima pergunta...\n")
+
+        time.sleep(2)
+        print()
 
     
 print("Quiz finalizado!") 
